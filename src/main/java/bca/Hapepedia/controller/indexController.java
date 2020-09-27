@@ -48,4 +48,9 @@ public class indexController {
 		return "customers/transaction";
 	}	
 	
+	@RequestMapping("/setting")
+	public String setting(Model model) {
+		return "customers/setting";
+	}	
+	
 }
