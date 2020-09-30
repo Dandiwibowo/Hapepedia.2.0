@@ -52,5 +52,20 @@ public class indexController {
 	public String setting(Model model) {
 		return "customers/setting";
 	}	
+
+	@RequestMapping("/login")
+	public String login(Model model) {
+		return "admins/login";
+	}
+
+	@RequestMapping("/forgotPassword")
+	public String forgotPassword(Model model) {
+		return "admins/password";
+	}	
+
+	@RequestMapping("/registration")
+	public String logregisin(Model model) {
+		return "admins/register";
+	}	
 	
 }
