@@ -1,13 +1,20 @@
 package bca.Hapepedia.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import bca.Hapepedia.services.AdminService;
+
 @Controller
 @RequestMapping("/admin")
 public class adminController {
-   	
+	   
+	@Autowired
+	private AdminService adminService;
+
 	@GetMapping
 	public String index(Model model) {
 		return "admins/index";
@@ -45,6 +52,7 @@ public class adminController {
 
 	@RequestMapping("/setting")
 	public String setting(Model model) {
+		model.addAttribute("admin list", adminService);
 		return "admins/setting";
 	}
 }
